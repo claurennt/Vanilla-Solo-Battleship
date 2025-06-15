@@ -23,6 +23,14 @@ h1 {
   font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -51,4 +59,14 @@ caption {
 
 td:not(thead td) {
   border: 1px solid #ffed00;
+}
+
+.ship-square {
+  width: 20px;
+  height: 20px;
+  border: 1px solid yellow;
+}
+.ship {
+  padding: 10px;
+  display: flex;
 }
