@@ -6,6 +6,9 @@ const createBattleground = () => {
   const tRow = document.createElement('tr');
   const tBody = document.createElement('tbody');
 
+  // for SR table labeling
+  table.ariaLabel = 'Battelground';
+
   table.appendChild(tHead);
   table.appendChild(tBody);
   tHead.appendChild(tRow);
@@ -37,10 +40,11 @@ const createBattleground = () => {
     // 10 cells in the row
     for (let col = 0; col < columnHeaders.length; col++) {
       const td = document.createElement('td');
-      td.innerText = '';
+      const content = document.createElement('p');
 
       // for screen readers, so users know where they are at, will be visually hidden via css
-      td.innerText = `${columnHeaders[col]} ${rowHeaders[col]}`;
+      content.innerText = `${columnHeaders[col]} ${rowHeaders[row]}`;
+      td.appendChild(content);
       tRow.appendChild(td);
     }
 
