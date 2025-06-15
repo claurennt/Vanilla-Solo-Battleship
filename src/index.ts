@@ -1,3 +1,5 @@
+import { displayComputerShips } from './components/ships/ships';
+import { ships } from './components/ships/shipsData';
 import { createTableHeadersText } from './utils';
 
 const createBattleground = () => {
@@ -56,6 +58,10 @@ const createBattleground = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const [container] = document.getElementsByTagName('main');
+
+  const computerShips = displayComputerShips(ships);
+  if (!computerShips) return;
+  container.appendChild(computerShips);
 
   const table = createBattleground();
   container.appendChild(table);
